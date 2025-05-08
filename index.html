@@ -37,12 +37,12 @@
       const seconds = Math.floor((timeLeft / 1000) % 60);
 
       countdown.innerHTML =`
-        <div data-content="Days">${days.length === 1 ? `0${days}` : days}</div>
-        <div data-content="Hours">${hours.length === 1 ? `0${hours}` : hours}</div>
-        <div data-content="Minutes">${
+        <div data-content="Dias">${days.length === 1 ? `0${days}` : days}</div>
+        <div data-content="Horas">${hours.length === 1 ? `0${hours}` : hours}</div>
+        <div data-content="Minutos">${
           minutes.length === 1 ? `0${minutes}` : minutes
         }</div>
-        <div data-content="Seconds">${
+        <div data-content="Segundos">${
           seconds.length === 1 ? `0${seconds}` : seconds
         }</div>
       `;
