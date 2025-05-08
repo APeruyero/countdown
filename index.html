@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Countdown Clock</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    #countdown {
-      font-size: 2em;
-    }
-  </style>
+  <title>Conteo para Libertad</title>
+  <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-  <h1>Adiós Popó</h1>
+  <h1>Esta leyenda se jubila en:</h1>
   <div id="countdown"></div>
 
   <script>
-    const targetDate = new Date("2025-06-30T00:00:00"); // Set your target date/time here
+    const targetDate = new Date("2025-06-30T00:00:00");
 
     function updateCountdown() {
       const now = new Date();
@@ -36,8 +31,16 @@
       const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
       const seconds = Math.floor((timeLeft / 1000) % 60);
 
-      document.getElementById("countdown").innerHTML =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      document.getElementById("countdown").innerHTML =`
+        <div data-content="Days">${days.length === 1 ? `0${days}` : days}</div>
+        <div data-content="Hours">${hours.length === 1 ? `0${hours}` : hours}</div>
+        <div data-content="Minutes">${
+          minutes.length === 1 ? `0${minutes}` : minutes
+        }</div>
+        <div data-content="Seconds">${
+          seconds.length === 1 ? `0${seconds}` : seconds
+        }</div>
+      `;
     }
 
     updateCountdown(); // initial call
