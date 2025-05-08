@@ -14,7 +14,7 @@
   <div class="container">
     <div class="countdown-wrapper">
       <h1>Esta leyenda se jubila en:</h1>
-      <div id="countdown"></div>
+      <div class="countdown"></div>
     </div>
   </div>
 
@@ -24,9 +24,10 @@
     function updateCountdown() {
       const now = new Date();
       const timeLeft = targetDate - now;
+      const countdown = document.querySelector(".countdown")
 
       if (timeLeft <= 0) {
-        document.getElementById("countdown").innerHTML = "🎉 Libre sooooooy! 🎉";
+        countdown.innerHTML = "🎉 Libre sooooooy! 🎉";
         return;
       }
 
@@ -35,7 +36,7 @@
       const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
       const seconds = Math.floor((timeLeft / 1000) % 60);
 
-      document.getElementById("countdown").innerHTML =`
+      countdown.innerHTML =`
         <div data-content="Days">${days.length === 1 ? `0${days}` : days}</div>
         <div data-content="Hours">${hours.length === 1 ? `0${hours}` : hours}</div>
         <div data-content="Minutes">${
